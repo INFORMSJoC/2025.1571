@@ -1,6 +1,6 @@
 [![INFORMS Journal on Computing Logo](https://INFORMSJoC.github.io/logos/INFORMS_Journal_on_Computing_Header.jpg)](https://pubsonline.informs.org/journal/ijoc)
 
-# An Optimization Toolkit with New Benchmark Instances for Enhanced Joint Islanding and Restoration of Power Systems
+#  Novel exact solution methods for efficient parallel power system restoration
 
 This archive is distributed in association with the [INFORMS Journal on
 Computing](https://pubsonline.informs.org/journal/ijoc) under the [BSD 3-Clause License](LICENSE).
@@ -11,13 +11,9 @@ that were used in the research reported on in the paper
 The snapshot is based on the Version 1.0.1 – Zenodo-linked release 
 [in this development repository](https://github.com/HaticeCalik/RadiusFormulationsForParallelPowerSystemRestoration). 
 
-
-The repository contains Python–Gurobi implementations of radius-based integer programming formulations and exact algorithms for solving the Generator Startup Sequencing (GSS) and Parallel Power System Restoration (PPSR) problems. 
-
 In addition to the code implementations, five new PPSR instances are included in the input folders together with the previous benchmark instances from the [literature](https://pubsonline.informs.org/doi/abs/10.1287/ijoc.2022.1258). For details on the mathematical formulations, algorithms, and properties of the new instances, please refer to the associated scientific publication.
 
-
-# How to Cite
+## Cite
 
 To cite the contents of this repository, please cite both the paper and this repo, using their respective DOIs
 
@@ -31,18 +27,18 @@ Below is the BibTex for citing this snapshot of the repository.
 @misc{Calik2026,
   author =        {H. Çalık},
   publisher =     {INFORMS Journal on Computing},
-  title =         {{An Optimization Toolkit with New Benchmark Instances for Enhanced Joint Islanding and Restoration of Power Systems}},
+  title =         {{ Novel exact solution methods for efficient parallel power system restoration}},
   year =          {2026},
   doi =           {10.1287/ijoc.2025.1571.cd},
   url =           {https://github.com/INFORMSJoC/2025.1571},  
   note =          {Available for download at https://github.com/INFORMSJoC/2025.1571},
 } 
 ```
-For the previous benchmark instances, please refer to and cite the original publications in which they were introduced.
 
-# Usage
+## Usage
 
 ### Instance and input file selection:
+
 Multiple problem instances are included in the input folders. In addition to the eight instances available in the literature, this repository provides five new instances.
 
 To select a specific instance, choose the corresponding `nodes` and `lines` files in `parametersAndSets.py`, along with any available lower bound (LB) and upper bound (UB).
@@ -50,6 +46,7 @@ To select a specific instance, choose the corresponding `nodes` and `lines` file
 For the single-radius PPSR implementations, LB and UB must be identical.
 
 ### To solve GSS, three method implementations can be run as main files: 
+
 The radius formulation FGSS: FGSS.py
 
 The binary search algorithm BSA: BSA.py
@@ -57,6 +54,7 @@ The binary search algorithm BSA: BSA.py
 The binary search algorithm using the partial relaxation of FGSS: BSA_RFGSS_STAR.py
 
 ### To solve PPSR, the following method implementations can be run either for a single radius value or multiple radius values in one radius set:
+
 The radius formulation SCF that can solve for multiple radius values: SCF-ALLRADIUS.py
 
 Single-radius formulation SCF with or without network reduction rule: SINGLE-RADIUS-SCF-REDUCTION.py
@@ -65,8 +63,6 @@ Single-radius formulation SCF with variable elimination and with or without othe
 
 Single-radius partition cuts formulation within a Branch-and-Cut implementation:  SINGLERADIUS-PC-STRONG-BC.py
 
-
 ### Output files:
+
 In order to extract log files, solution files or solution figures, use the output directories. The PPSR files provide sample code lines for exporting such files, though these are primarily commented in the initial release. 
-
-
